@@ -47,10 +47,17 @@ public class TestCases {
     }
 
     
-    public  void testCase01(){
+    public void testCase01() throws Exception{
         System.out.println("Start Test case: testCase01");
-        driver.get("https://www.google.com");
+        openGoogleCalender();
+        System.out.println("Verify that the current URL contains \"calendar.\" :" + (driver.getCurrentUrl().contains("calendar") ? "Pass" : "Fail") );
         System.out.println("end Test case: testCase02");
+    }
+
+
+    private void openGoogleCalender(){
+        driver.get("https://calendar.google.com/");
+
     }
 
 
